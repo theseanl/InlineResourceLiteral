@@ -61,9 +61,9 @@ class ResourceCache {
         let resourcePath = this.rescMap[name];
         if (isUndef(resourcePath)) { return null; }
         let processed = this.cache.get(resourcePath);
-        const raw = fs.readFileSync(resourcePath).toString();
         const ext = ResourceCache.getFileExtension(resourcePath);
         if (isUndef(processed)) {
+            const raw = fs.readFileSync(resourcePath).toString();
             processed = this.preprocess(raw, ext);
             this.cache.set(resourcePath, processed);
         }
