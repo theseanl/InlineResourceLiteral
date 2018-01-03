@@ -1,0 +1,16 @@
+{
+  "name": "inline-resource-literal",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "LGPL",
+  "author": {
+    "name": "seanl-adg",
+    "email": "seanl@adguard.com"
+  },
+  "dependencies": {
+    "clean-css": "^4.1.9",
+    "esprima": "^4.0.0",
+    "estraverse": "^4.2.0",
+    "html-minifier": "^3.5.8"
+  }
+}
