@@ -6,7 +6,7 @@ InlineResource is a Javascript build tool that handles inlining of common types 
 
 Add InlineResource to the dependency by executing:
 ```
-yarn add https://github.com/seanl-adg/InlineResourceLiteral --dev
+yarn add https://github.com/seanl-adg/InlineResourceLiteral.git --dev
 ```
 
 ## Usage
@@ -70,4 +70,4 @@ element.innerHTML = "<p>domain is: " + document.domain + "</p>\n<p>language is: 
 
 ## API
 
-Check out the [`.d.ts` file](https://github.com/seanl-adg/InlineResource/master/blob/index.d.ts).
+Check out the [`.d.ts` file](https://github.com/seanl-adg/InlineResource/blob/master/index.d.ts).
