@@ -99,7 +99,7 @@ class ResourceCache {
         if (quoteIsNotNeeded) { return intermediate[0]; }
         return intermediate.map((str, index) => {
             if ((index & 1) === 0) {
-                return this.quotize(str);
+                return ResourceCache.quotize(str);
             } else {
                 return options[str];
             }
@@ -108,7 +108,7 @@ class ResourceCache {
     static escape(match) {
         return '\\' + match;
     }
-    quotize(resc) {
+    static quotize(resc) {
         return `"${resc.replace(reNeedsEscape, ResourceCache.escape)}"`
     }
 }
