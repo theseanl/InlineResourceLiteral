@@ -30,7 +30,7 @@ const file = fs.readFileSync('./source.js').toString();
 
 const inlined = (new InlineResource({
     "TEMPLATE": './template.html'
-})).inlineResource(file);
+})).inline(file);
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
@@ -59,7 +59,7 @@ const file = fs.readFileSync('./source.js').toString();
 
 const inlined = (new InlineResource({
     "TEMPLATE": './template.html'
-})).inlineResource(file);
+})).inline(file);
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
