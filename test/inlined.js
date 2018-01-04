@@ -21,3 +21,5 @@ var js_computed_resource = "class Settings {\\
     }\\
 }\\
 ";
+
+var non_existing_resource = RESOURCE_NONEXISTENT;

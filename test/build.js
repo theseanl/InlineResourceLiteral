@@ -8,7 +8,8 @@ const inline = (new InlineResource({
     TEST_JSON:              'test/test_resources/test.json',
     TEST_PRECOMPUTED_CSS:   'test/test_resources/test.precomputed.css',
     TEST_PRECOMPUTED_HTML:  'test/test_resources/test.precomputed.html',
-    TEST_PRECOMPUTED_JS:    'test/test_resources/test.precomputed.js'
+    TEST_PRECOMPUTED_JS:    'test/test_resources/test.precomputed.js',
+    NONEXISTENT:            'test/test_resources/non_existent.js'
 })).inline;
 
 const source = fs.readFileSync('test/source.js').toString();

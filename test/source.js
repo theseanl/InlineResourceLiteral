@@ -6,3 +6,5 @@ var json_resource = RESOURCE_TEST_JSON;
 var css_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_CSS", "WIDTH", window.innerWidth, "HEIGHT", window.innerHeight);
 var html_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_HTML", "TITLE", "title", "VALUE", Math.random());
 var js_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_JS", "OBJECT", initial_settings);
+
+var non_existing_resource = RESOURCE_NONEXISTENT;

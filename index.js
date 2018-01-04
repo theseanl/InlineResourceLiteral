@@ -63,7 +63,10 @@ class ResourceCache {
         let processed = this.cache.get(resourcePath);
         const ext = ResourceCache.getFileExtension(resourcePath);
         if (isUndef(processed)) {
-            const raw = fs.readFileSync(resourcePath).toString();
+            let raw;
+            try {
+                raw = fs.readFileSync(resourcePath).toString();
+            } catch(e) { return null; } // The prescribed resource does not exist.
             processed = this.preprocess(raw, ext);
             this.cache.set(resourcePath, processed);
         }
