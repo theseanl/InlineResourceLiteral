@@ -70,4 +70,4 @@ element.innerHTML = "<p>domain is: " + document.domain + "</p>\n<p>language is: 
 
 ## API
 
-Check out the [`.d.ts` file](https://github.com/seanl-adg/InlineResource/blob/master/index.d.ts).
+Check out the [`.d.ts` file](https://github.com/seanl-adg/InlineResourceLiteral/blob/master/index.d.ts).

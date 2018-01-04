@@ -3,11 +3,11 @@
  * to insert as a value of `global.options['RESOURCES']`.
  */
 
-const fs = require('fs');
-const esprima = require('esprima');
+const fs         = require('fs');
+const esprima    = require('esprima');
 const estraverse = require('estraverse');
 const minifyHtml = require('html-minifier').minify;
-const CleanCSS = require('clean-css');
+const CleanCSS   = require('clean-css');
 
 const DEFAULT_PREFIX = "RESOURCE_";
 
