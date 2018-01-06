@@ -59,14 +59,21 @@ class ResourceCache {
     }
     getResource(name, options) {
         let resourcePath = this.rescMap[name];
+        let raw;
         if (isUndef(resourcePath)) { return null; }
+        if (typeof resourcePath === 'object') { // typeof resourcePath == { buffer:Buffer, path:string }
+            let { path, buffer } = resourcePath;
+            resourcePath = path;
+            raw = buffer.toString();
+        }
         let processed = this.cache.get(resourcePath);
         const ext = ResourceCache.getFileExtension(resourcePath);
         if (isUndef(processed)) {
-            let raw;
-            try {
-                raw = fs.readFileSync(resourcePath).toString();
-            } catch(e) { return null; } // The prescribed resource does not exist.
+            if (isUndef(raw)) {
+                try {
+                    raw = fs.readFileSync(resourcePath).toString();
+                } catch(e) { return null; } // The prescribed resource does not exist.
+            }
             processed = this.preprocess(raw, ext);
             this.cache.set(resourcePath, processed);
         }
@@ -163,6 +170,10 @@ class ESTraverseOption {
 
 function isUndef(x) {
     return typeof x === 'undefined';
+}
+
+function isString(x) {
+    return typeof x === 'string';
 }
 
 module.exports = InlineResource;

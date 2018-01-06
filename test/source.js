@@ -8,3 +8,5 @@ var html_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_HTML", "TITLE", "ti
 var js_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_JS", "OBJECT", initial_settings);
 
 var non_existing_resource = RESOURCE_NONEXISTENT;
+
+var js_computed_resource_buffer = RESOURCE_ARGS("TEST_PRECOMPUTED_JS_BUFFER", "KEY", "1");

@@ -1,8 +1,11 @@
 interface Option {
     /**
-     * A dictionary mapping resource markers to a path to the resource.
+     * A dictionary mapping resource markers to 
+     *  - a path to the resource, or
+     *  - an object which contains info about a hypothetical path to the resource which will
+     *    be used to extract file extension and caching and a Buffer holding the content.
      */
-    [resource_marker:string]:string
+    [resource_marker:string]:string|{ buffer:Buffer, path:string }
     /**
      * A user-supplied string to be used as a resource marker prefix
      * instead of "RESOURCE_". If it is not provided, a default value
