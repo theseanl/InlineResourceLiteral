@@ -23,3 +23,5 @@ var js_computed_resource = "class Settings {\\
 ";
 
 var non_existing_resource = RESOURCE_NONEXISTENT;
+
+var js_computed_resource_buffer = "var key = "+"1"+";";
