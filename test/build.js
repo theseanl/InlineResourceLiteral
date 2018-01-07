@@ -14,7 +14,7 @@ const inline = (new InlineResource({
 
     TEST_PRECOMPUTED_JS_BUFFER: {
         path: 'test.precomputed.hypothetical.js',
-        buffer: new Buffer('var key = RESOURCE_KEY;')
+        data: new Buffer('var key = RESOURCE_KEY;')
     }
 })).inline;
 

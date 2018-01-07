@@ -12,5 +12,6 @@
     "esprima": "^4.0.0",
     "estraverse": "^4.2.0",
     "html-minifier": "^3.5.8"
-  }
+  },
+  "devDependencies": {}
 }
