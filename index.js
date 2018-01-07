@@ -62,9 +62,9 @@ class ResourceCache {
         let raw;
         if (isUndef(resourcePath)) { return null; }
         if (typeof resourcePath === 'object') { // typeof resourcePath == { buffer:Buffer, path:string }
-            let { path, buffer } = resourcePath;
+            let { path, data } = resourcePath;
             resourcePath = path;
-            raw = buffer.toString();
+            raw = data.toString();
         }
         let processed = this.cache.get(resourcePath);
         const ext = ResourceCache.getFileExtension(resourcePath);
