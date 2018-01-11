@@ -9,4 +9,5 @@ var js_computed_resource = RESOURCE_ARGS("TEST_PRECOMPUTED_JS", "OBJECT", initia
 
 var non_existing_resource = RESOURCE_NONEXISTENT;
 
+var js_resource_buffer = RESOURCE_TEST_JS_BUFFER;
 var js_computed_resource_buffer = RESOURCE_ARGS("TEST_PRECOMPUTED_JS_BUFFER", "KEY", "1");

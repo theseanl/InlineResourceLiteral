@@ -1,5 +1,6 @@
 class Settings {
     constructor() {
+        // A comment
         this._settings = RESOURCE_OBJECT;
     }
     get settings() {

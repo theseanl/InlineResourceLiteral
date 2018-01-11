@@ -12,6 +12,10 @@ const inline = (new InlineResource({
 
     NONEXISTENT:            'test/test_resources/non_existent.js',
 
+    TEST_JS_BUFFER: {
+        path: 'test.hypothetical.js',
+        data: `(function() { return 0; })()`
+    },
     TEST_PRECOMPUTED_JS_BUFFER: {
         path: 'test.precomputed.hypothetical.js',
         data: new Buffer('var key = RESOURCE_KEY;')
