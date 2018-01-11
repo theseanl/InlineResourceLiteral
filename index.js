@@ -49,7 +49,9 @@ const htmlMinifyOption = {
     removeComments: false,
     removeOptionalTags: true
 };
-const reNeedsEscape = /[\b\f\n\r\t\v\0"\\]/g;
+// https://github.com/joliss/js-string-escape/blob/master/index.js
+// https://github.com/joliss/js-string-escape/blob/master/LICENSE
+const reNeedsEscape = /["'\\\n\r\u2028\u2029]/g
 
 class ResourceCache {
     constructor(rescMap, prefix) {
@@ -109,16 +111,50 @@ class ResourceCache {
         if (quoteIsNotNeeded) { return intermediate[0]; }
         return intermediate.map((str, index) => {
             if ((index & 1) === 0) {
-                return ResourceCache.quotize(str);
+                return ResourceCache.quotize(str, type);
             } else {
                 return options[str];
             }
         }).join("+");
     }
     static escape(match) {
-        return '\\' + match;
+        switch (match) {
+            case '"':
+            case "'":
+            case '\\':
+                return '\\' + match
+            case '\n':
+                return '\\n'      
+            case '\r':      
+                return '\\r'
+            case '\u2028':
+                return '\\u2028'
+            case '\u2029':
+                return '\\u2029'
+        }
     }
-    static quotize(resc) {
+    static escapeJs(match) {
+        switch (match) {
+            case '"':
+            case "'":
+            case '\\':
+                return '\\' + match
+            case '\n':
+                return '\\n\\\n' // Line continuation character for ease
+                                 // of reading inlined resource. 
+            case '\r':
+                return ''        // Carriage returns won't have
+                                 // any semantic meaning in JS
+            case '\u2028':
+                return '\\u2028'
+            case '\u2029':
+                return '\\u2029'
+        }
+    }
+    static quotize(resc, type) {
+        if (type === 'js') {
+            return `"${resc.replace(reNeedsEscape, ResourceCache.escapeJs)}"`
+        }
         return `"${resc.replace(reNeedsEscape, ResourceCache.escape)}"`
     }
 }
@@ -170,10 +206,6 @@ class ESTraverseOption {
 
 function isUndef(x) {
     return typeof x === 'undefined';
-}
-
-function isString(x) {
-    return typeof x === 'string';
 }
 
 module.exports = InlineResource;
