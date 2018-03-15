@@ -29,7 +29,7 @@ class InlineResource {
     }
     inline(code) {
         if (code.indexOf(this.prefix) === -1) { return code; } // Quick path
-        const ast = esprima.parseScript(code, esprimaParseOption);
+        const ast = esprima.parseModule(code, esprimaParseOption);
         let taskBuffer = [];
         const option = new ESTraverseOption(taskBuffer, code, this.rescCache, this.reResourceVar);
         estraverse.traverse(ast, option);
