@@ -6,9 +6,9 @@ InlineResource is a Javascript build tool that handles inlining of common types 
 
 ## Installation
 
-Add InlineResource to the dependency by executing:
+Add InlineResource to your project's devDependency by executing:
 ```
-yarn add https://github.com/seanl-adg/InlineResourceLiteral.git --dev
+yarn add inline-resource-literal --dev
 ```
 
 ## Usage
