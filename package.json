@@ -1,7 +1,7 @@
 {
   "name": "inline-resource-literal",
   "description": "Inlines common types of resources to Javascript, powered by declarative syntax.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "LGPL",
   "author": {
