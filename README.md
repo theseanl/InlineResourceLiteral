@@ -1,5 +1,7 @@
 # InlineResourceLiteral
 
+[![NPM Version](https://img.shields.io/npm/v/inline-resource-literal.svg?style=plastic)](https://npmjs.org/package/inline-resource-literal)
+
 InlineResource is a Javascript build tool that handles inlining of common types of resources with a declarative syntax. It provides an ability to replace pre-defined placeholders into JS expressions at build time. It automatically minifies files with extension `html` and `css`.
 
 ## Installation
