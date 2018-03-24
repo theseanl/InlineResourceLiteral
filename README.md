@@ -13,17 +13,17 @@ yarn add inline-resource-literal --dev
 
 ## Usage
 
-```
+```js
 // source.js
 ...
 element.innerHTML = RESOURCE_TEMPLATE;
 ...
 ```
-```
+```html
 // template.html
 <html><div></div></html>
 ```
-```
+```js
 // build.js
 const InlineResource = require("inline-resource-literal");
 const fs = require('fs');
@@ -36,23 +36,23 @@ const inlined = (new InlineResource({
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
-```
+```js
 // inlined.js
 element.innerHTML = "<div></div>";
 ```
 
 ### Inlining with Precomputed Values
 
-```
+```js
 // source.js
 element.innerHTML = RESOURCE_ARGS("TEMPLATE", "DOMAIN", document.domain, "LANGUAGE", navigator.language);
 ```
-```
+```html
 // template.html
 <p>domain is: RESOURCE_DOMAIN</p>
 <p>language is: RESOURCE_LANGUAGE</p>
 ```
-```
+```js
 // build.js
 const InlineResource = require("inline-resource-literal");
 const fs = require('fs');
@@ -65,7 +65,7 @@ const inlined = (new InlineResource({
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
-```
+```js
 // inlined.js
 element.innerHTML = "<p>domain is: " + document.domain + "</p>\n<p>language is: " + navigator.language + "</p>";
 ```
