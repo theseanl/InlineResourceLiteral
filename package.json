@@ -1,20 +1,21 @@
 {
   "name": "inline-resource-literal",
   "description": "Inlines common types of resources to Javascript, powered by declarative syntax.",
-  "version": "1.0.2",
+  "keywords": ["inline", "resources", "HTML", "JS", "CSS", "JSON"],
+  "version": "1.0.3",
   "main": "index.js",
   "license": "LGPL",
   "author": {
-    "name": "seanl-adg",
-    "email": "seanl@adguard.com"
+    "name": "theseanl",
+    "email": "i73hi64d0wr5df8pckig@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seanl-adg/InlineResourceLiteral.git"
+    "url": "git+https://github.com/theseanl/InlineResourceLiteral.git"
   },
-  "homepage": "https://github.com/seanl-adg/InlineResourceLiteral",
+  "homepage": "https://github.com/theseanl/InlineResourceLiteral",
   "bugs": {
-    "url": "https://github.com/seanl-adg/InlineResourceLiteral/issues"
+    "url": "https://github.com/theseanl/InlineResourceLiteral/issues"
   },
   "dependencies": {
     "clean-css": "^4.1.9",
