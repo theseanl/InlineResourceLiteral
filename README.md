@@ -13,6 +13,8 @@ yarn add inline-resource-literal --dev
 
 ## Usage
 
+### Sources
+
 ```js
 // source.js
 ...
@@ -23,6 +25,15 @@ element.innerHTML = RESOURCE_TEMPLATE;
 // template.html
 <html><div></div></html>
 ```
+
+### Build setup
+
+#### Using CLI
+```
+inline-resc source.js inlined.js --resc:TEMPLATE template.html
+```
+
+#### Using JS API
 ```js
 // build.js
 const InlineResource = require("inline-resource-literal");
@@ -36,12 +47,17 @@ const inlined = (new InlineResource({
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
+
+### Output
+
 ```js
 // inlined.js
 element.innerHTML = "<div></div>";
 ```
 
 ### Inlining with Precomputed Values
+
+#### Sources
 
 ```js
 // source.js
@@ -52,6 +68,13 @@ element.innerHTML = RESOURCE_ARGS("TEMPLATE", "DOMAIN", document.domain, "LANGUA
 <p>domain is: RESOURCE_DOMAIN</p>
 <p>language is: RESOURCE_LANGUAGE</p>
 ```
+
+#### Build setup
+
+```
+inline-resc source.js inlined.js --resc:TEMPLATE template.html
+```
+or
 ```js
 // build.js
 const InlineResource = require("inline-resource-literal");
@@ -65,6 +88,9 @@ const inlined = (new InlineResource({
 
 fs.writeFileSync('./inlined.js', inlined);
 ```
+
+#### Output
+
 ```js
 // inlined.js
 element.innerHTML = "<p>domain is: " + document.domain + "</p>\n<p>language is: " + navigator.language + "</p>";

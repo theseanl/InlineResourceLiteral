@@ -1,9 +1,19 @@
 {
   "name": "inline-resource-literal",
   "description": "Inlines common types of resources to Javascript, powered by declarative syntax.",
-  "keywords": ["inline", "resources", "HTML", "JS", "CSS", "JSON"],
-  "version": "1.0.3",
+  "keywords": [
+    "inline",
+    "resources",
+    "HTML",
+    "JS",
+    "CSS",
+    "JSON"
+  ],
+  "version": "1.1.0",
   "main": "index.js",
+  "bin": {
+    "inline-resc": "./cli.js"
+  },
   "license": "LGPL",
   "author": {
     "name": "theseanl",
