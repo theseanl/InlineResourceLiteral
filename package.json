@@ -9,7 +9,7 @@
     "CSS",
     "JSON"
   ],
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "index.js",
   "bin": {
     "inline-resc": "./cli.js"

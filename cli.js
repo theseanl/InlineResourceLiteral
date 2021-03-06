@@ -17,6 +17,14 @@ for (let i = 0; i < args.length; i++) {
             let value = args[++i];
             if (isUndef(value)) printUsage();
             resc[flag] = value;
+            let nextFlag = args[i+1];
+            if (nextFlag && !nextFlag.startsWith("-")) {
+                resc[flag] = {
+                    path: value,
+                    data: nextFlag
+                };
+                i++;
+            }
         } else {
             // Unrecognized flag
             printUsage();
@@ -34,7 +42,7 @@ for (let i = 0; i < args.length; i++) {
 if (isUndef(source)) printUsage();
 
 function printUsage() {
-    console.log(`inline-resc <source_path> [<output_path>] --resc:<template_name> <template_file>`);
+    console.log(`inline-resc <source_path> [<output_path>] --resc:<template_name> <template_file> [<template_content>]`);
     process.exit(1);
 }
 
