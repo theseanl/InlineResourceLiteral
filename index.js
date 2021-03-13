@@ -51,7 +51,7 @@ const htmlMinifyOption = {
 };
 // https://github.com/joliss/js-string-escape/blob/master/index.js
 // https://github.com/joliss/js-string-escape/blob/master/LICENSE
-const reNeedsEscape = /["'\\\n\r\u2028\u2029]/g
+const reNeedsEscape = /["\\\n\r\u2028\u2029]/g
 
 class ResourceCache {
     constructor(rescMap, prefix) {
