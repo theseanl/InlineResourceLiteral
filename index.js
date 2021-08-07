@@ -4,7 +4,7 @@
  */
 
 const fs         = require('fs');
-const esprima    = require('esprima');
+const esprima    = require('nightly-esprima');
 const estraverse = require('estraverse');
 const minifyHtml = require('html-minifier').minify;
 const CleanCSS   = require('clean-css');
