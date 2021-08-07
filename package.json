@@ -30,7 +30,7 @@
   "dependencies": {
     "clean-css": "^4.1.9",
     "nightly-esprima": "^2021.7.10",
-    "estraverse": "^4.2.0",
+    "estraverse": "^5.2.0",
     "html-minifier": "^3.5.8"
   },
   "devDependencies": {}
