@@ -9,7 +9,7 @@
     "CSS",
     "JSON"
   ],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "bin": {
     "inline-resc": "./cli.js"
@@ -28,10 +28,10 @@
     "url": "https://github.com/theseanl/InlineResourceLiteral/issues"
   },
   "dependencies": {
-    "clean-css": "^4.1.9",
-    "nightly-esprima": "^2021.7.10",
+    "clean-css": "^5.1.5",
     "estraverse": "^5.2.0",
-    "html-minifier": "^3.5.8"
+    "html-minifier": "^3.5.8",
+    "nightly-esprima": "^2021.7.10"
   },
   "devDependencies": {}
 }
